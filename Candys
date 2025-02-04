@@ -10,10 +10,11 @@ local function _(arg1) -- Line 8, Named "convertTime"
 	return string.format("%02i:%02i", arg1 / 60 % 60, arg1 % 60)
 end
 
+local guiPath = game:GetService("Players").LocalPlayer.PlayerGui.HalloweenBoss.Candy.NextReward.LocalScript
 local var3 = 30 - Replica_upvw.Data.Playtime % 30
-script.Parent.Text = "Next reward in "..string.format("%02i:%02i", var3 / 60 % 60, var3 % 60)
+guiPath.Parent.Text = "Next reward in "..string.format("%02i:%02i", var3 / 60 % 60, var3 % 60)
 
 Replica_upvw:ListenToChange("Playtime", function() -- Line 12, Named "update"
 	local var2 = 30 - Replica_upvw.Data.Playtime % 30
-	script.Parent.Text = "Next reward in "..string.format("%02i:%02i", var2 / 60 % 60, var2 % 60)
+	guiPath.Parent.Text = "Next reward in "..string.format("%02i:%02i", var2 / 60 % 60, var2 % 60)
 end)
